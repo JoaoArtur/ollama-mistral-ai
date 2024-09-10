@@ -4,7 +4,7 @@ services:
   ollama_mistral:
     image: ubuntu:latest
     container_name: ollama_mistral
-    command: /bin/bash -c "curl -fsSL https://ollama.com/install.sh | sh && ollama run mistral"
+    nuild: .
     volumes:
       - ./ollama:/root/.ollama  # Volume for saving configuration
     stdin_open: true
