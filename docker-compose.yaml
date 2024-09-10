@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  ollama-mistral:
+    image: ollama/mistral:latest
+    container_name: ollama-mistral
+    ports:
+      - "5000:5000"  # Adjust the port mapping as needed
+    volumes:
+      - ./data:/var/lib/ollama  # Mount a volume to persist data
+    environment:
+      - OLLAMA_PORT=5000  # Set the port for Ollama to run on
+    command: [ "start" ]  # Command to run the Mistral service
+    restart: unless-stopped
+    networks:
+      - ollama-network
+
+networks:
+  ollama-network:
+    driver: bridge
