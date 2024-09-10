@@ -18,3 +18,4 @@ EXPOSE 11434
 
 # Set the command to run Ollama Mistral when the container starts
 CMD ["ollama", "run", "mistral"]
+ENTRYPOINT ["ollama", "serve"]
