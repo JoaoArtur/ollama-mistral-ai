@@ -4,7 +4,7 @@ services:
   ollama_mistral:
     image: ubuntu:latest
     container_name: ollama_mistral
-    nuild: .
+    build: .
     volumes:
       - ./ollama:/root/.ollama  # Volume for saving configuration
     stdin_open: true
